@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 
-public class CocheDBMemoria extends CochesDB{
+public class CocheDBMemoria implements CochesDB, CochesEstadisticas {
 
+    public int totalInserciones = 0;
+    public int totalEliminaciones = 0;
     ArrayList<Coche> coches = new ArrayList();
 
     @Override
@@ -41,5 +43,25 @@ public class CocheDBMemoria extends CochesDB{
         }
 
         incrementarEliminaciones();
+    }
+
+    @Override
+    public int getTotalInserciones() {
+        return totalInserciones;
+    }
+
+    @Override
+    public int getTotalEliminaciones() {
+        return totalEliminaciones;
+    }
+
+    @Override
+    public void incrementarInserciones() {
+        totalInserciones++;
+    }
+
+    @Override
+    public void incrementarEliminaciones() {
+        totalEliminaciones++;
     }
 }

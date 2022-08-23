@@ -29,13 +29,13 @@ public class Main {
 
         CochesDB cochesDB;
 
-        String tipo = "memoria";
-        if (tipo.equalsIgnoreCase("memoria")) {
-            cochesDB = new CocheDBMemoria();
-        } else {
-            cochesDB = new CocheDBFichero();
-        }
-
+//        String tipo = "memoria";
+//        if (tipo.equalsIgnoreCase("memoria")) {
+//
+//        } else {
+//            cochesDB = new CocheDBFichero();
+//        }
+        cochesDB = new CocheDBMemoria();
         Coches coches = new Coches(cochesDB);
 
         coches.crearCoche(coche);
@@ -54,7 +54,7 @@ public class Main {
             System.out.println();
         }
 
-        System.out.println("Total de inserciones: " + cochesDB.getTotalInserciones());
-        System.out.println("Total de eliminaciones: " + cochesDB.getTotalEliminaciones());
+        System.out.println("Total de inserciones: " + ((CocheDBMemoria) cochesDB).getTotalInserciones());
+        System.out.println("Total de eliminaciones: " + ((CocheDBMemoria) cochesDB).getTotalEliminaciones());
     }
 }

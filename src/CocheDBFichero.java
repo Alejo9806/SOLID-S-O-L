@@ -4,7 +4,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CocheDBFichero extends CochesDB{
+public class CocheDBFichero implements CochesDB{
     public String ficheroDatos = "coches.txt";
 
     @Override
@@ -60,8 +60,6 @@ public class CocheDBFichero extends CochesDB{
             printStream.close();
         } catch (Exception e) {
         }
-
-        incrementarInserciones();
     }
 
     @Override
@@ -85,8 +83,6 @@ public class CocheDBFichero extends CochesDB{
             printStream.close();
         } catch (Exception e) {
         }
-
-        incrementarEliminaciones();
     }
 
     private String separarUsuarioPorComas(Coche coche) {
